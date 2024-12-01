@@ -1,7 +1,12 @@
 package com.tata.lon.loan_service.service.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class PaymentEntity {
 
+    @Id
     private Long id;
     private String amount;
 

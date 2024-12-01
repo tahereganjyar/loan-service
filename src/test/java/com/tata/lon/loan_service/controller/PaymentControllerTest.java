@@ -2,18 +2,11 @@ package com.tata.lon.loan_service.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tata.lon.loan_service.service.PaymentService;
-import com.tata.lon.loan_service.service.PaymentServiceImpl;
-import com.tata.lon.loan_service.service.entity.ContractEntity;
 import com.tata.lon.loan_service.service.entity.PaymentEntity;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
@@ -47,7 +40,7 @@ class PaymentControllerTest {
         paymentEntity1.setId(1L);
         paymentEntity1.setAmount("2000");
 //        PaymentService mockPaymentService = Mockito.mock(PaymentService.class);
-        Mockito.when(paymentService.getPaymentById(paymentId)).thenReturn(paymentEntity1);
+        Mockito.when(paymentService.getPaymentByyId(paymentId)).thenReturn(paymentEntity1);
 
 
         //When

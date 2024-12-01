@@ -20,7 +20,7 @@ public class PaymentController {
     public PaymentEntity getPaymentById(@PathVariable Long paymentId) {
 
 
-         return paymentService.getPaymentById(paymentId);
+         return paymentService.getPaymentByyId(paymentId);
 
 
     }
