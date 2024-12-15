@@ -23,7 +23,7 @@ class ContractControllerIntegrationTest {
     private TestRestTemplate restTemplate;
 
     @Test
-    void getContractById() {
+    void getContractByIdTest() {
         ContractEntity forObject = this.restTemplate.getForObject("http://localhost:" + port + "/api/contracts/1",
                 ContractEntity.class);
         assertNotNull(forObject);

@@ -17,6 +17,7 @@
 //
 ////        int i = steadyGene("actgaaag");
 //        int i = steadyGene("TGATGCCGTCCCCTCAACTTGAGTGCTCCTAATGCGTTGC");
+////        int i = steadyGene("GAAATAAA");
 ////        int i = steadyGene("gaaataaa");
 //        System.out.println(i);
 //
@@ -75,88 +76,64 @@
 //        }
 //        if (steady)
 //            return 0;
+//        charArr.sort((o1, o2) -> {
+//            if (o1.size() < o2.size()) return 1;
+//            else if (o1.size() == o2.size())
+//                return 0;
+//            else
+//                return -1;
+//        });
 //
-//        int min = n;
-//        int temp = 0;
-//        int firstIndex = 0;
-//        int lastIndex = n;
+//        int s = 1;
+//        if (charArr.get(0).size() > expectedCount) {
+//            int diff = charArr.get(0).size() - expectedCount;
+//            int first = charArr.get(0).get(0);
+//            int last = charArr.get(0).get(0+diff-1);
+//            while (s < charArr.size() - 1) {
+//                if (charArr.get(s).size() > expectedCount){
+//
+//
+//                }
+//
+//
+//
+//s++;
+//            }
+//        }
+//        int m = 0;
 //        int s = 0;
-//
-//        while (s < charArr.size()) {
-//            if (charArr.get(s).size() > expectedCount) {
-//                int firstDiff = charArr.get(s).size() - expectedCount;
-//
-//                for (int i=0;i<firstDiff-1;i++)
-//                {
-//
-//                    int m=s+1;
-//                    if (m<charArr.size()-1 && charArr.get(m).size() > expectedCount)
-//                    {
-//                        int secondDiff = charArr.get(m).size() - expectedCount;
-//
-//                        f
-//
-//                        for (int j=0;j<secondDiff-1;j++)
-//                        {
-//
-//                            if (charArr.get(m).get(j) < firstIndex)
-//                                firstIndex = charArr.get(m).get(j);
-//                            if (charArr.get(m).get(j + secondDiff - 1) > lastIndex)
-//                                lastIndex = charArr.get(m).get(j + secondDiff - 1);
+//        int first = n;
+//        int last = 0;
+//        int min = n;
+//        boolean end = false;
+//        while (!end) {
+//            while (s < charArr.size() - 1 && !end) {
+//                if (charArr.get(s).size() > expectedCount) {
+//                    if (m > charArr.get(s).size() - 1)
+//                        end = true;
+//                    else {
+//                        if (m < charArr.get(s).size() - 1 && charArr.get(s).get(m) < first) {
+//                            first = charArr.get(s).get(m);
 //
 //
 //                        }
-//
-//
-//
-//                    }
-//                }
-//
-//            }
-//
-//        s++;
-//        }
-//
-//
-//        for (int k = 0;k<charArr.size();k++) {
-//            s=k;
-//            while (s < charArr.size()) {
-//
-//
-//                if (charArr.get(s).size() > expectedCount) {
-//                    int diff = charArr.get(s).size() - expectedCount;
-//                    int i = 0;
-//                    if (i < diff - 1) {
-//                        if (charArr.get(s).get(i) < firstIndex)
-//                            firstIndex = charArr.get(s).get(i);
-//                        if (charArr.get(s).get(i + diff - 1) > lastIndex)
-//                            lastIndex = charArr.get(s).get(i + diff - 1);
+//                        int diff = charArr.get(s).size() - expectedCount;
+//                        if ((m + diff - 1) < charArr.get(s).size() && charArr.get(s).get(m + diff - 1) > last)
+//                            last = charArr.get(s).get(m + diff - 1);
 //
 //
 //                    }
-//
-//
 //                }
 //                s++;
 //            }
+//            if (!end && (last - first + 1) < min)
+//                min = last - first + 1;
+//            m++;
+//            s = 0;
+//            first = n;
+//            last = 0;
 //        }
-//        for (int m = 0; m < exceededCharArr.length; m++) {
-//            if (exceededCharArr[m] > 0) {
-//                int ex = exceededCharArr[m];
-//                int i = 0;
-//                int next = (i + ex) - 1;
-//                firstIndex = charArr.get(m).get(i);
-//                lastIndex = charArr.get(m).get(next);
-////                for (int i = 0; i < charArr.get(m).size()-ex-1; i++) {
-//                temp = temp + lastIndex - firstIndex;
-////                    if (charArr.get(m).get(next) - charArr.get(m).get(i) < min)
-////                        min = temp;
-//
-////                }
-//            }
-//        }
-//
-//        return min + 1;
+//        return min;
 //    }
 //
 //}
